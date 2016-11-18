@@ -1,0 +1,70 @@
+h1{
+    color: #e23123; font-size: 1.2em;
+}
+section{
+    width: 80%;  margin: auto;  background-color: #fcf7f7;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3), -23px 0 20px -23px rgba(0, 0, 0, .8), 23px 0 20px -23px rgba(0, 0, 0, .8), 0 0 40px rgba(0, 0, 0, .1) inset;
+    padding: 80px 40px; box-sizing: border-box;  display: block;  height: 100%;
+}
+body section button{
+    padding: 5px 15px; border-radius: 10px; margin-top: 10px; background: #e23123; color: azure;
+}
+body section button:hover{
+    cursor: pointer;
+}
+.table_blur {
+    background: #e6e6e6;
+    text-align: left;
+    width: 100%;
+
+}
+.table_blur th {
+    border: 5px solid #fefbfb;
+    background: #e23123;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    box-sizing: border-box;
+
+}
+.table_blur th:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 25%;
+    height: 25%;
+    width: 100%;
+
+}
+.table_blur tr:nth-child(odd) {
+    background: #e23123;
+    color: azure;
+
+}
+.table_blur th:first-child {
+}
+.table_blur th:last-child {
+}
+.table_blur td {
+    /*border: 1px solid #e3eef7;*/
+    padding: 10px 15px;
+    position: relative;
+    transition: all 0.5s ease;
+    border: 5px solid #fefbfb;
+}
+.table_blur tbody:hover td {
+    color: transparent;
+    text-shadow: 0 0 3px #a09f9d;
+}
+.table_blur tbody:hover tr:hover td {
+    color: #2a2a2a;
+    text-shadow: none;
+    cursor: pointer;
+}
+.table_blur tbody:hover tr:hover:nth-child(odd) td {
+    color: azure;
+}
+
+
+

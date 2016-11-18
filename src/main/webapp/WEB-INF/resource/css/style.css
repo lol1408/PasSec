@@ -1,0 +1,166 @@
+
+/*
+Css for header
+*/
+html, body{}
+header{
+    width: 100%; background-color: #e23123; display: block;
+    height: 85px;
+}
+header>div{
+    width: 80%;  background-color: #e23123;  margin: auto;  font-family: 'Open Sans', sans-serif;
+    font-size: 20px;  color: azure; height: 85px;
+}
+header>div>div{
+    float: left;
+    box-sizing: border-box;
+}
+.nav{
+float: right;
+}
+.nav li{
+    float: left;
+}
+#touch_menu{text-align: right;
+    padding-right:20px;}
+.nav li a, #touch_menu{
+    display: block;  font-weight: bold; height: 85px;
+    font-size: 1em;  color: #ffffff; text-decoration: none;
+    padding: 20px 10px 20px; box-sizing: border-box;
+}
+.nav li a:hover, #touch_menu:hover {background-color: #e27122; color: #f3e4f0  }
+.nav li a:active, #touch_menu:active{box-shadow: 0 0 15px rgba(0, 0, 0, .1) inset;  }
+#touch_menu{display: none;}
+.header_right_block{
+    width: 80%; float: right; height: 85px;
+}
+.header_left_block{
+    width: 20%; padding: 10px 10px; float: left;
+}
+@media (max-device-width: 940px) {
+    .nav{display: none;}
+    #touch_menu{display: block}
+    #touch_menu:hover{background-color: #e23123; color: azure;
+      }
+    .nav li{float: none; text-align: right;}
+    .nav li a{background: #fff; color: #e27122;  position: relative;
+        z-index: 10000;  border-top: 1px solid #ee8d17;}
+    .nav li a:hover{background-color: #ece2ea; color: #e23a19;
+        border-right: 3px solid #e27122;
+    }
+    .nav li:first-child a{border-top: none;}
+    .header_right_block{width: 50%; float: right}
+    .header_left_block{
+        width: 50%; padding: 10px 10px; float: left;
+    }
+}
+
+/*
+CSS for content site
+*/
+section{
+    width: 80%;  margin: auto;  background-color: #fcf7f7;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3), -23px 0 20px -23px rgba(0, 0, 0, .8), 23px 0 20px -23px rgba(0, 0, 0, .8), 0 0 40px rgba(0, 0, 0, .1) inset;
+    padding: 80px 40px; box-sizing: border-box;  display: flex;  flex-direction: row;
+    align-content: center;
+}
+section>div{
+    width: 20%;  flex: 1 0 auto;  flex-direction: column;   margin: 0 5px 80px;
+}
+section>div>div{
+    height: 400px;  padding: 20px;  box-sizing: border-box;
+    margin: 0 auto 10px;
+}
+.block_content{
+    color: black;
+}
+.block_content img{
+    margin-right: 20px;
+    float: left;
+}
+section .block_content_left h1{
+    text-align: left; font-size: 41px;  color: #e23e18;
+}
+section .block_content_left h2{
+    font-size: 28px;
+}
+
+/*
+Стиль формы
+*/
+section .block_content_right h1{
+    text-align: right; font-size: 28px;  color: #e23e18;
+}
+
+.form{
+    margin: auto;  width: 60%;  font-size: 1em;
+}
+.form input[type="text"], .form input[type="password"] {
+    width: 100%;
+}
+.form input[type="submit"]{
+    float: right; width: 150px; box-sizing: border-box; border-radius: 7px; background-color: #e23e18; color: azure;
+    cursor: pointer;
+}
+.check_box{
+ float:left; font-size: 0.6em;
+}
+.submit{
+    font-size: 0.8em;  margin: 0;  float: right;  text-align: right;
+}
+@media all and (max-device-width: 839px){
+    section{
+        flex-direction: column;
+    }
+    section>div{
+        flex-direction: row;  width: 80%; margin: 0 auto;
+    }
+    section .block_content_left h1{
+        text-align: center;
+    }
+    section .block_content_right h1{
+        text-align: center;  color: #e23e18;
+    }
+    section>div>div{
+        height: 300px;
+    }
+    footer{
+        display: none;
+    }
+}
+
+@media all and (max-device-width: 720px){
+    section{
+        flex-direction: column; font-size: 0.6em;
+    }
+    section>div{
+        width: 80%; margin: 0 auto;
+    }
+    section .block_content_left h1{
+        text-align: center; font-size: 1.2em;
+    }
+    section .block_content_right h1{
+        text-align: center;  color: #e23e18;
+    }
+    .block_content_left div{
+        height: 250px;
+        margin-top: 40px;
+    }
+    .block_content_right .block_content{
+        height: 250px;
+    }
+}
+footer{
+    flex: 0 0 auto;  width: 100%;  background-color: #e23123; color: azure;
+}
+footer .footer_content{
+    width: 80%;  margin: auto;  flex-direction: row;   display: flex; padding-left: 40px;
+    box-sizing: border-box; -webkit-flex-direction: row;
+
+}
+footer .footer_content .footer_div{
+    padding: 20px;
+    margin-right: 150px;
+}
+
+
