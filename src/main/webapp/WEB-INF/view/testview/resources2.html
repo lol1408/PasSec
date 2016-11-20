@@ -25,6 +25,10 @@
                     pass.innerHTML=data[i].password;
                     //document.body.appendChild(elem);
                 })
+            }).fail(function (jqxhr, testStatus, error) {
+                var err = testStatus + ',' + error;
+                console.log("Request failed: " + err);
+                document.getElementById("table").style.display = "none";
             });
         }
     </script>
