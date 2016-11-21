@@ -17,7 +17,7 @@ public class Resource {
     @Id
     @Column(name = "idresource")
     @JsonProperty("idResource")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idResource;
 
     @Column(name = "nameresource", nullable = false)
