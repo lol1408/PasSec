@@ -21,8 +21,12 @@
     <link rel="stylesheet" type="text/css" href="${reset}">
     <link rel="stylesheet" type="text/css" href="${style}">
     <link rel="stylesheet" type="text/css" href="${table}">
+    <link rel="stylesheet" type="text/css" href="resource/css/popup.css">
     <script src="${jquery}" type="text/javascript"></script>
     <script src="${menu}" type="text/javascript"></script>
+    <script src="/resource/js/jquery-validation-1.15.1/dist/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="/resource/js/popup.js" type="text/javascript"></script>
+    <script src="/resource/js/addresform.js" type="text/javascript"></script>
     <script type="text/javascript">
         function table() {
             $.getJSON('/list', function(data) {
@@ -37,6 +41,10 @@
                     pass.innerHTML=data[i].password;
                     //document.body.appendChild(elem);
                 })
+            }).fail(function (jqxhr, testStatus, error) {
+                var err = testStatus + ',' + error;
+                console.log("Request failed: " + err);
+                document.getElementById("table").style.display = "none";
             });
         }
     </script>
@@ -68,7 +76,25 @@
             <th>Ресурс</th><th>Логин</th><th>Пароль</th>
         </tr>
     </table>
-    <button id = "add-res-butt">Добавить запись</button>
+    <input type="button" id="add-res-butt" onclick="popup_show()" value="Добавить запись">
+    <div id="popup_div">
+        <div class="popup_content" id="popup_content">
+            <form action="/#" method="post" id="popup_form" name="popup_form">
+                <img src="resource/img/fileclose_5805.ico" id="close" onclick="popup_hide()">
+                <h2>Введите данные о рессурсе</h2>
+                <hr>
+                <div id="inputs_popup">
+                    <label class="label_resource">Имя ресурса</label>
+                    <input id="name_resource" type="text" name="name_resource" placeholder="Имя">
+                    <label class="label_resource">Логин от ресурса</label>
+                    <input id="login_resource" type="text" name="login_resource" placeholder="Логин">
+                    <label class="label_resource">Пароль от ресурса</label>
+                    <input id="password_resource" type="text" name="password_resource" placeholder="Пароль">
+                </div>
+                <input id="submit_popup_form" type="submit" name="submit_popup_form">
+            </form>
+        </div>
+    </div>
 </section>
 <footer>
     <div class="footer_content">
@@ -84,6 +110,7 @@
             <p>Напиши нам</p>
         </div>
     </div>
+    <div id="feedback"></div>
 </footer>
 </body>
 </html>

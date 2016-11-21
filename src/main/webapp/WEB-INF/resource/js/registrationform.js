@@ -4,7 +4,7 @@
 $(function() {
 
     $("#js-register-form").validate({
-
+        ignore: ":hidden",
         rules:{
 
             form_login:{
@@ -19,17 +19,14 @@ $(function() {
                 required: true,
                 equalTo: "#form-pswd1"
             }
+        },
+        submitHandler:function () {
+            postQuery();
         }
     });
 
 });
-//submit press
-jQuery(document).ready(function ($) {
-    $("#js-register-form").submit(function (event) {
-            event.preventDefault();
-        postQuery();
-    });
-});
+
 function postQuery() {
     var formData = {}
             formData["login"] = $("#form_login").val();

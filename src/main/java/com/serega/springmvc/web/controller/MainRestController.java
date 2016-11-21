@@ -54,15 +54,19 @@ public class MainRestController {
     }
     //Добавление записи
     @RequestMapping(value = "/addresource", method = RequestMethod.POST)
-    public AjaxResponseBody addResource(@RequestBody String json) {
+    public AjaxResponseBody addResource(@RequestBody Resource json) {
         AjaxResponseBody result = new AjaxResponseBody();
+        org.springframework.security.core.userdetails.User user =
+                (org.springframework.security.core.userdetails.User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         try {
-            Resource resource = Convert.jsonToResource(json);
+            Resource resource = json;
+            User byLogin = userServices.findByLogin(user.getUsername());
+            resource.setUser(byLogin);
             resourceService.addResource(resource);
             result.setCode("200");
             result.setMsg("Ваша запись успешно добавлена");
 
-        } catch (IOException e) {
+        } catch (Exception e) {
             result.setCode("202");
             result.setMsg("Ну удалось преобразовать запись в json объект");
             e.printStackTrace();

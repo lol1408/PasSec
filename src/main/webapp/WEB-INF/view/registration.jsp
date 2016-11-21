@@ -14,7 +14,7 @@
     <c:url value="/resource/js/jquery.min.js" var="jquery"/>
     <c:url value="/resource/js/jquery-validation-1.15.1/dist/jquery.validate.min.js" var="validator"/>
     <c:url value="/resource/js/sha1.js" var="sha1"/>
-    <c:url value="/resource/js/custom.js" var="custom"/>
+    <c:url value="/resource/js/registrationform.js" var="custom"/>
     <script src="${jquery}"></script>
     <script src="${validator}"></script>
     <script src="${sha1}"></script>
